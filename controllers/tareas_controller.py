@@ -10,4 +10,7 @@ def listar():
 @tareas_bp.post("/tareas")
 def crear():
     data = request.json
-    return jsonify(add_task(data)), 201
+    try:
+        return jsonify(add_task(data)), 201
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400

@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  monolito:
+    build: .
+    container_name: monolito-app
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./data:/app/data
